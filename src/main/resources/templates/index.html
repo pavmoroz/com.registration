@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:insert="header.html">
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h1 sec:authorize="isAnonymous()">Hello, my ANONYMOUS friend!</h1>
+<h1 sec:authorize="isAuthenticated()">You have been authenticated successfully!</h1>
+<h1>Welcome to the home page!</h1>
+</body>
+</html>

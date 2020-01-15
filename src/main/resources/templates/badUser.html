@@ -1,0 +1,22 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AWFUL USER!!!</title>
+</head>
+<body>
+<h1> Your token is not valid. Generate another one by clicking on a button below.</h1>
+<b th:text="${message}">!!!</b>
+<br>
+
+<div th:if="${expired != null}">
+    <h1>resend text</h1>
+    <button onclick="onCLick()">resend button</button>
+</div>
+</body>
+
+<script th:inline="javascript">
+function onCLick() {
+    var token = /*[[${token}]]*/ "";
+    window.location.href = "/resendRegistrationToken?token=" + token;
+}
+</script>
+</html>

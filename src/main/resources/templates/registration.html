@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h1>Registration Form</h1>
+<form th:action="@{/registration}" th:object="${user}" method="POST">
+    <div/>
+        <label>Username: </label>
+        <input th:field="*{username}"/>
+        <br/>
+        <b th:each="error: ${#fields.errors('username')}"
+            th:text="${error}">Validation error</b>
+    </div>
+    <div>
+        <label>Email: </label>
+        <input type="email" th:field="*{email}"/>
+        <br />
+        <b th:each="error: ${#fields.errors('email')}"
+           th:text="${error}">Validation error</b>
+    </div>
+    <div>
+        <label>Password: </label>
+        <input type="password" th:field="*{password}"/>
+        <br />
+        <b th:each="error: ${#fields.errors('global')}"
+           th:text="${error}">Validation error</b>
+    </div>
+    <div>
+        <label>Password confirmation: </label>
+        <input type="password" th:field="*{matchingPassword}"/>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

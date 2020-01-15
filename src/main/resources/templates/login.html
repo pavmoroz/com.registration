@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="header.html"></head>
+<body>
+<h1>Login</h1>
+<b th:text="${message}">!!!</b>
+<b th:if="${message != null}">You have registered successfully. Please, log in now.</b>
+<b th:if="${param.error != null}"
+   th:text="${session[SPRING_SECURITY_LAST_EXCEPTION]}">error</b>
+
+    <form name='f' th:action="@{/login}" method='POST'>
+    <table>
+        <tr>
+            <td>User's email:</td>
+            <td><input type='email' id='username' name='username' value=''></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type='password' id='password' name='password' /></td>
+        </tr>
+        <tr>
+            <td>Remember Me:</td>
+            <td><input type="checkbox" name="remember-me" /></td>
+        </tr>
+        <tr>
+            <td><input name="submit" type="submit" value="submit" /></td>
+        </tr>
+    </table>
+</form>
+<a th:href="@{/forgotPassword}">I forgot my password!</a>
+</body>
+</html>
