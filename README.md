@@ -9,4 +9,4 @@ Note: This project is not finished. There is almost no client-side code (CSS, Ja
 exceptions handling is not provided for all cases.
 Nevertheless, despite these facts, registration process is working properly.
 Also, if you want to run this app, you should provide email account information for sending emails in
-application.properties file.
+application.properties file.  
